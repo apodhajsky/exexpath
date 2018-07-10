@@ -21,11 +21,21 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('https://forum.katalon.com/categories/web-testing')
 
-def xVar
+def xObj = CustomKeywords.'com.swre.tools.exexpath'('count(//div[@class=" category_parent_katalon-studio"])', 'NUMBER_TYPE')
 
-xVar = CustomKeywords.'com.swre.tools.exexpath'('count(//div[@class="category_parent_katalon-studio"])', 'NUMBER_TYPE')
+println(xObj)
 
-println xVar
+xObj = CustomKeywords.'com.swre.tools.exexpath'('count(//div[@class=" category_parent_katalon-studio"])>10', 'BOOLEAN_TYPE')
+
+println(xObj)
+
+xObj = CustomKeywords.'com.swre.tools.exexpath'('normalize-space(" The   xpath    executer! ")', 'STRING_TYPE')
+
+println(xObj)
+
+xObj = CustomKeywords.'com.swre.tools.exexpath'('normalize-space(" The   xpath    executer! ")', 'STRING_TYPO')
+
+println(xObj)
 
 WebUI.closeBrowser()
 
